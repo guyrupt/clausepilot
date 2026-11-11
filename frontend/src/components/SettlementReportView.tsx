@@ -135,7 +135,7 @@ export function SettlementReportView({
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50/70 px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="rounded bg-emerald-600 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-white">
-            STAGE 03
+            STEP 3 OF 3
           </span>
           <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase">
             Official Settlement Decision & Audit Notice

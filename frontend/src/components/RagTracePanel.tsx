@@ -89,7 +89,7 @@ export function RagTracePanel({
   };
 
   return (
-    <aside className="flex flex-col rounded-2xl border border-slate-200 bg-white shadow-xs xl:sticky xl:top-16 xl:max-h-[calc(100vh-5rem)]">
+    <aside className="flex flex-col rounded-2xl border border-slate-200 bg-white shadow-xs lg:sticky lg:top-16 lg:max-h-[calc(100vh-5rem)]">
       {/* Panel Header */}
       <div className="rounded-t-2xl border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
         <div className="flex items-center justify-between gap-2">
@@ -119,7 +119,7 @@ export function RagTracePanel({
           <p className="mt-1 max-w-xs text-xs leading-relaxed text-slate-500">
             Click{" "}
             <span className="font-semibold text-indigo-700">
-              Analyze Claim &amp; Run Hybrid RAG
+              Step 1: Check Policy Rules &amp; Generate Review Checklist
             </span>{" "}
             to inspect live Cosine, BM25, RRF scores, and auto-linked exclusions.
           </p>

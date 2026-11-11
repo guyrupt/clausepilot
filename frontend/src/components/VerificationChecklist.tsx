@@ -50,10 +50,10 @@ export function VerificationChecklist({
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50/70 px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="rounded bg-indigo-600 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-white">
-            STAGE 02
+            STEP 2 OF 3
           </span>
           <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase">
-            Clerk Guided Verification Checkpoints
+            Confirm Policy Checkpoints
           </h2>
           <span className="hidden rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-500 sm:inline-block">
             Zero Prompting Required
@@ -78,8 +78,8 @@ export function VerificationChecklist({
               <Wand2 className="h-3.5 w-3.5" />
               <span>
                 {allMatchSuggested
-                  ? "Evidence-Suggested Answers Applied"
-                  : "Apply Evidence-Suggested Answers"}
+                  ? "Receipt Answers Autofilled"
+                  : "Autofill Answers from Receipts"}
               </span>
             </button>
           )}
@@ -239,12 +239,12 @@ export function VerificationChecklist({
             {isAdjudicating ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin text-indigo-400" />
-                <span>Computing Official Settlement...</span>
+                <span>Issuing Official Settlement Decision...</span>
               </>
             ) : (
               <>
                 <Scale className="h-4 w-4 text-emerald-400" />
-                <span>Compute Official Settlement</span>
+                <span>Step 2: Issue Official Settlement Decision</span>
               </>
             )}
           </button>

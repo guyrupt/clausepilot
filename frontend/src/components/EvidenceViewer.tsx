@@ -86,10 +86,10 @@ export function EvidenceViewer({
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50/70 px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="rounded bg-slate-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-white">
-            STAGE 01
+            STEP 1 OF 3
           </span>
           <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase">
-            Claim Brief & Multimodal Evidence
+            Inspect Claim Packet &amp; Receipts
           </h2>
         </div>
 
@@ -229,50 +229,61 @@ export function EvidenceViewer({
           </div>
         )}
 
-        {/* Primary Analyze CTA + Subtle Live Gemini 3.8 Re-scan Button */}
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-indigo-200/80 bg-gradient-to-r from-indigo-50/90 via-slate-50 to-white p-3.5">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <button
-              type="button"
-              onClick={() => onAnalyze(false)}
-              disabled={isAnalyzing}
-              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-indigo-700 active:scale-[0.99] disabled:opacity-65"
-            >
-              {isAnalyzing && !isRescanningOcr ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Running Vision OCR + Hybrid RAG...</span>
-                </>
-              ) : (
-                <>
-                  <Sparkles className="h-4 w-4" />
-                  <span>
-                    {analysis
-                      ? "Re-run Claim Analysis & Hybrid RAG"
-                      : "Analyze Claim & Run Hybrid RAG"}
-                  </span>
-                </>
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => onAnalyze(true)}
-              disabled={isAnalyzing}
-              title="Bypass SHA-256 disk cache and execute live GMI Cloud Gemini 3.8 Flash Vision OCR"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-indigo-300 hover:bg-indigo-50/50 hover:text-indigo-800 disabled:opacity-50"
-            >
-              <RefreshCw
-                className={`h-3.5 w-3.5 ${
-                  isRescanningOcr ? "animate-spin text-indigo-600" : "text-slate-500"
+        {/* Primary Clerk Step 1 CTA + Unobtrusive Live OCR Link */}
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-indigo-200/80 bg-gradient-to-r from-indigo-50/90 via-slate-50 to-white p-4">
+          <div className="space-y-1">
+            <p className="text-xs font-semibold text-slate-900">
+              {analysis
+                ? "Step 1 complete — scroll down to Step 2 to confirm policy checks."
+                : "Ready to review? Click below to cross-check receipts against the policy."}
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-0.5">
+              <button
+                type="button"
+                onClick={() => onAnalyze(false)}
+                disabled={isAnalyzing}
+                className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold shadow-sm transition active:scale-[0.99] disabled:opacity-65 ${
+                  analysis
+                    ? "border border-indigo-200 bg-white text-indigo-700 hover:bg-indigo-50"
+                    : "bg-indigo-600 text-white hover:bg-indigo-700"
                 }`}
-              />
-              <span>
-                {isRescanningOcr
-                  ? "Scanning Live with Gemini 3.8..."
-                  : "Re-scan Live with Gemini 3.8 Vision"}
-              </span>
-            </button>
+              >
+                {isAnalyzing && !isRescanningOcr ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span>Checking Policy Rules &amp; Exclusions...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="h-4 w-4" />
+                    <span>
+                      {analysis
+                        ? "Re-check Policy Rules"
+                        : "Step 1: Check Policy Rules & Generate Review Checklist"}
+                    </span>
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => onAnalyze(true)}
+                disabled={isAnalyzing}
+                title="Developer/Judge check: bypass SHA-256 disk cache and re-OCR PNG images live via GMI Cloud Gemini 3.8 Flash Vision"
+                className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-500 underline-offset-2 transition hover:text-indigo-700 hover:underline disabled:opacity-50"
+              >
+                <RefreshCw
+                  className={`h-3 w-3 ${
+                    isRescanningOcr ? "animate-spin text-indigo-600" : "text-slate-400"
+                  }`}
+                />
+                <span>
+                  {isRescanningOcr
+                    ? "Re-scanning PNGs with Gemini Vision..."
+                    : "Re-run Live OCR"}
+                </span>
+              </button>
+            </div>
           </div>
 
           {analysis && (
@@ -285,7 +296,7 @@ export function EvidenceViewer({
             >
               <CheckCircle2 className="h-3 w-3" />
               {analysis.vision_cached
-                ? "SHA-256 Vision Cache Hit"
+                ? "OCR Cache Verified"
                 : "Live Gemini 3.8 Vision Verified"}
             </span>
           )}
