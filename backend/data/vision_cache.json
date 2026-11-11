@@ -1,0 +1,65 @@
+{
+  "945270de3d3eaaded3b395158bfbf8db3f9df6cc6a006a5cd3d0ac607d2fe4e8": {
+    "vision_summary": "Passenger Chen, Wei-Ting (PNR: 6N8K2P) experienced a 6-hour 25-minute delay on STARLUX Airlines flight JX805 (NRT to TPE) scheduled for 2026-10-31 20:15 JST, departing instead on recovery flight JX805D at 02:40 JST on 2026-11-01 due to Typhoon Kong-rey. The policy was purchased on 2026-10-25, prior to the CWA warning issued on 2026-10-29. Claimed items total $567.00 USD, including a $250.00 fixed delay benefit, emergency lodging at Shinjuku Prince Hotel (¥36,000 / $240.00 USD), and dining at Uotami Izakaya consisting of a dinner set (¥8,250 / $55.00 USD) and draft beer (¥3,300 / $22.00 USD).",
+    "items": [
+      {
+        "item_id": "vis_1",
+        "description": "Article 21 Flight Delay Tier Fixed Benefit (6h to <12h delay)",
+        "category": "fixed_benefit",
+        "original_amount": "USD $250.00",
+        "claimed_usd": 250.0,
+        "source_doc": "clm_8841_delay_cert.png"
+      },
+      {
+        "item_id": "vis_2",
+        "description": "Shinjuku Prince Hotel (新宿プリンスホテル) Standard Room 1 Night Emergency Lodging",
+        "category": "lodging",
+        "original_amount": "¥36,000 JPY",
+        "claimed_usd": 240.0,
+        "source_doc": "clm_8841_receipt.png"
+      },
+      {
+        "item_id": "vis_3",
+        "description": "Uotami Izakaya (魚民 新宿店) Grilled Fish & Sashimi Set Dinner 定食",
+        "category": "meal",
+        "original_amount": "¥8,250",
+        "claimed_usd": 55.0,
+        "source_doc": "clm_8841_receipt.png"
+      },
+      {
+        "item_id": "vis_4",
+        "description": "Uotami Izakaya (魚民 新宿店) Draft Beer 生ビール x2 Mugs",
+        "category": "alcohol",
+        "original_amount": "¥3,300",
+        "claimed_usd": 22.0,
+        "source_doc": "clm_8841_receipt.png"
+      }
+    ]
+  },
+  "7cd546b32125444ef5fb75448715f560bacb0531433c24fd1fc69b5a1fc40376": {
+    "vision_summary": "EVA Air Property Irregularity Report (Ref: TPEXBR-88420) and purchase receipt for passenger Lin Ya-Hsuan on flight BR197 from Tokyo Narita (NRT) to Taipei Taoyuan (TPE). Following arrival at the passenger's home destination on 2026-11-02 at 17:20 TST, baggage delivery was delayed by 15 hours until 2026-11-03 at 08:20 TST. Claimed emergency expenses incurred post-landing at Uniqlo Mingyao and Watsons total NT$10,880 TWD (USD $340.00) for clothing and toiletries (Receipt/GUI: TW-88392014).",
+    "items": [
+      {
+        "item_id": "vis_1",
+        "description": "Uniqlo Apparel, Change of Clothes & Basic Toiletries Set (UNIQLO MINGYAO & WATSONS 統一發票 TW-88392014)",
+        "category": "baggage_essentials",
+        "original_amount": "NT$10,880 TWD",
+        "claimed_usd": 340.0,
+        "source_doc": "clm_8842_baggage_receipt.png"
+      }
+    ]
+  },
+  "23d7fb6920513d327e77fe4d6f2b48aa0422864427cd320855e78c7890b5ffb7": {
+    "vision_summary": "Passenger WANG, BO-HAN was traveling on a split-PNR self-transfer itinerary from Taipei (TPE) to London (LHR) via Hong Kong (HKG). Feeder flight China Airlines CI903 (PNR: 7K9X2A) was delayed by 2h 15m, arriving at 12:20 HKT on 2026-11-04 and causing a missed connection on separate ticket Cathay Pacific CX251 (PNR: M4P81Q, scheduled departure 11:55 HKT). A walk-up replacement economy ticket on Cathay Pacific flight CX255 was purchased at HKG airport for HK$11,076 HKD (USD $1,420.00).",
+    "items": [
+      {
+        "item_id": "vis_1",
+        "description": "Walk-Up Rebooking: Cathay Pacific CX255 HKG -> LHR Economy Walk-Up Fare (香港機場現場重購單程機票)",
+        "category": "rebooking",
+        "original_amount": "HK$11,076 HKD",
+        "claimed_usd": 1420.0,
+        "source_doc": "clm_8843_split_pnr.png"
+      }
+    ]
+  }
+}
